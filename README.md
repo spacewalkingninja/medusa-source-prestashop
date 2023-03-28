@@ -49,9 +49,23 @@ We recommend enable all the resources.
 
 To install the plugin run the following command on your Medusa server:
 
+hey guys need somehow to uplad this to npm, smbody make it for me plz. Idc, I wont do it for u. If u actually wanna upload it, USE THE NOTSHITE prefix! Its a must cause @juansoler has made a SHITE plugin. His sucks.
+
+
 ```bash
-npm install medusa-source-prestashop
+npm install medusa-source-prestashop-notshite
 ```
+
+So if u download this u will see its the same as the one I forked. Except this file, that is cause Im using this file for all edits and u must too. 
+U will have to edit services/prestashop-product.js
+line 1590 or smth like
+He had this:
+      product.data.product.meta_keywords = product.data.product.meta_keywords.split(',');
+Which is shite, so I made it notshite:
+      if(!(product.data.product.meta_keywords === undefined))
+      {
+      product.data.product.meta_keywords = product.data.product.meta_keywords.split(',');
+      }
 
 ## Plugin Configurations
 
