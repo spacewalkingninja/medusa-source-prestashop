@@ -91,6 +91,10 @@ class ImportStrategy extends AbstractBatchJobStrategy {
     // await categories.data.categories.map(async (category) => {
       for await(let category of categories.data.categories) {
 
+    
+    this.logger_.info('Importing cat')
+
+    this.logger_.info(category)
 
     await this.prestashopCategoryService_
            .create(await this.prestashopClientService_.retrieveCategory(category.id));
