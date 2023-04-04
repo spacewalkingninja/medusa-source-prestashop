@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Prestashop Source Plugin for Medusa
+  NOT SHIT Prestashop Source Plugin for Medusa "notshite"
 </h1>
 <p align="center">
   A Medusa plugin that imports categories and products from Prestashop into Medusa.
