@@ -35,6 +35,7 @@ class PrestashopCategoryService extends TransactionBaseService {
         return this.update(category, existingCollection)
       }
       
+      this.logger_.info("AND IN THE CAT SVC")
       this.logger_.info(existingCollection)
 
       //create collection
