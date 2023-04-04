@@ -94,7 +94,7 @@ class ImportStrategy extends AbstractBatchJobStrategy {
     
     this.logger_.info('Importing cat')
 
-    this.logger_.info(category)
+    this.logger_.info(JSON.stringify(category))
 
     await this.prestashopCategoryService_
            .create(await this.prestashopClientService_.retrieveCategory(category.id));
