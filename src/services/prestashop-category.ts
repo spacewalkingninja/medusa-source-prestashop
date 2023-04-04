@@ -34,6 +34,8 @@ class PrestashopCategoryService extends TransactionBaseService {
       if (existingCollection) {
         return this.update(category, existingCollection)
       }
+      
+      this.logger_.info(existingCollection)
 
       //create collection
       const collectionData = this.normalizeCollection(category.data.category);
