@@ -29,18 +29,20 @@ class PrestashopCategoryService extends TransactionBaseService {
 
   async create (category: any): Promise<void> {
     return this.atomicPhase_(async (manager) => {
+      this.logger_.info("AND IN THE CAT SVC")
+      
       //check if a collection exists for the category
       const existingCollection = await this.productCollectionService_
         .withTransaction(manager)
         .retrieveByHandle(this.getHandle(category.data.category))
         .catch(() => undefined);
+      
+      this.logger_.info(existingCollection)
 
       if (existingCollection) {
         return this.update(category, existingCollection)
       }
       
-      this.logger_.info("AND IN THE CAT SVC")
-      this.logger_.info(existingCollection)
 
       //create collection
       const collectionData = this.normalizeCollection(category.data.category);
