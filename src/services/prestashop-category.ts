@@ -1,12 +1,14 @@
 import PrestashopClientService from 'medusa-source-prestashop/src/services/prestashop-client';
 import { ProductCollection, ProductCollectionService, TransactionBaseService } from '@medusajs/medusa';
 
+import { Logger } from "@medusajs/medusa/dist/types/global";
 import { EntityManager } from 'typeorm';
 
 type InjectedDependencies = {
   prestashopClientService: PrestashopClientService;
   productCollectionService: ProductCollectionService;
   manager: EntityManager;
+  logger: Logger;
 }
 
 class PrestashopCategoryService extends TransactionBaseService {
