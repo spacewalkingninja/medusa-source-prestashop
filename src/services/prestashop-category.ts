@@ -16,10 +16,12 @@ class PrestashopCategoryService extends TransactionBaseService {
   protected transactionManager_: EntityManager;
   protected prestashopClientService_: PrestashopClientService;
   protected productCollectionService_: ProductCollectionService;
+  protected logger_: Logger;
 
   constructor(container: InjectedDependencies, options) {
     super(container);
 
+    this.logger_ = container.logger;
     this.manager_ = container.manager;
     this.prestashopClientService_ = container.prestashopClientService;
     this.productCollectionService_ = container.productCollectionService;
